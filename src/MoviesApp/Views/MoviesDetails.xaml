@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:bh="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MoviesApp.Views.MoviesDetails">
+    <ContentPage.Content>
+        <ScrollView>     
+                    <StackLayout Spacing="10" Padding="0,0,0,0">
+                       <!-- <ActivityIndicator HeightRequest="40" WidthRequest="40" x:Name="actIndFooter" IsVisible="false" IsRunning="false"
+                           Color="Black"
+                           Grid.Row="0" 
+                           Grid.Column="0" 
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand" />
+                        -->
+                       <!--  <Label x:Name="loading" HorizontalOptions="Center" IsVisible="false" Text="Loading..."/>-->
+                         <ffimageloading:CachedImage
+                            x:Name="ImgBig"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            Aspect="Fill"
+                            Source="{Binding Img}"
+                            HeightRequest="250">
+                         </ffimageloading:CachedImage>  
+
+                       <Grid BackgroundColor="White" RowSpacing="5" Padding="10,5,10,20">
+                              <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="1" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                               </Grid.RowDefinitions>
+                             <Grid.ColumnDefinitions>
+                               <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                                   <Label Grid.Row="0" x:Name="Title" Text="{Binding Titles,StringFormat='Title : {0:N}'}}}" Grid.Column="0" FontSize="Medium" TextColor="Gray" HorizontalOptions="Start" FontAttributes="Bold" />
+                                   <Label Grid.Row="1" x:Name="Genre" Text="{Binding Genre,StringFormat='Genre : {0:N}'}}}" Grid.Column="0"  FontSize="Medium" TextColor="Gray" HorizontalOptions="Start" FontAttributes="Bold"  />
+                                   <Label Grid.Row="2" x:Name="Release" Text="{Binding Release,StringFormat='Release : {0:N}'}}}" Grid.Column="0" FontSize="Medium" TextColor="Gray" HorizontalOptions="Start" FontAttributes="Bold"  />
+                                   <BoxView Grid.Row="3" Grid.Column="0"  WidthRequest="1" HeightRequest="1"  Color="Black"/>  
+                                   <Label Grid.Row="4" x:Name="OverviewTitle" Text="Overview" Grid.Column="0" FontSize="Large" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  />
+                                   <Label Grid.Row="5" x:Name="OverView" Text="{Binding Overviews}" Grid.Column="0" FontSize="Medium" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                            </Grid>
+                    </StackLayout>
+          </ScrollView>     
+    </ContentPage.Content>
+</ContentPage>

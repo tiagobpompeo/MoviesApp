@@ -54,6 +54,7 @@ namespace MoviesApp
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<SplashScreenPage>();
+            containerRegistry.RegisterForNavigation<MoviesDetails>();
         }
 
         protected override void OnStart()
